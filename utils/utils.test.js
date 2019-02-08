@@ -1,3 +1,4 @@
+const expect = require('expect');
 const utils = require('./utils');
 
 it('should add two numbers', () =>
@@ -5,10 +6,13 @@ it('should add two numbers', () =>
       var result = utils.add(44 , 12);
       // throw new Error('Value not correct');
 
-      if (result !== 56)
-      {
-        throw new Error(`Expected 56 but got ${result}`);
-      }
+      expect(result).toBe(56);    // using expect assertion library
+      expect(result).toBeA('number');
+
+      // if (result !== 56)
+      // {
+      //   throw new Error(`Expected 56 but got ${result}`);
+      // }
   });
 
 
@@ -16,8 +20,10 @@ it('should add two numbers', () =>
   {
       var result = utils.square(4);
 
-      if (result !== 16)
-      {
-        throw new Error(`Expected 16 but got ${result}`);
-      }
+      expect(result).toBe(16).toBeA('number');    // NB chained assertions
+
+      // if (result !== 16)
+      // {
+      //   throw new Error(`Expected 16 but got ${result}`);
+      // }
   });
