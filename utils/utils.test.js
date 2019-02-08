@@ -31,5 +31,30 @@ it('should square a number', () =>
 it ('should expect some values', () =>
 {
     // expect({name: 'Peter'}).toBe({name: 'Peter'});    // can't compare objects with toBe
-    expect({name: 'Peter'}).toEqual({name: 'Peter'});    // toEqual instead of toBe
+     expect({name: 'Peter'}).toEqual({name: 'Peter'});    // toEqual instead of toBe
+});
+
+it ('should expect some more values (array)', () =>
+{
+    // expect([1,2,3,4,5]).toInclude(7);
+    expect([1,2,3,4,5]).toInclude(4);
+});
+
+it ('should expect not some more values (array)', () =>
+{
+    expect([1,2,3,4,5]).toExclude(7);
+});
+
+it ('should expect some values', () =>
+{
+    // expect({name: 'Peter'}).toBe({name: 'Peter'});    // can't compare objects with toBe
+     expect({
+       name: 'Peter',
+       age: 45,
+       location: 'Redruth'
+   }).toInclude({
+     age: 45
+      // age: 22
+   })
+     ;    // toEqual instead of toBe
 });
