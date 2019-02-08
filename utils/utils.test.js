@@ -10,3 +10,14 @@ it('should add two numbers', () =>
         throw new Error(`Expected 56 but got ${result}`);
       }
   });
+
+
+  it('should square a number', () =>
+  {
+      var result = utils.square(4);
+
+      if (result !== 16)
+      {
+        throw new Error(`Expected 16 but got ${result}`);
+      }
+  });
