@@ -45,7 +45,7 @@ it ('should expect not some more values (array)', () =>
     expect([1,2,3,4,5]).toExclude(7);
 });
 
-it ('should expect some values', () =>
+it ('should expect some object values', () =>
 {
     // expect({name: 'Peter'}).toBe({name: 'Peter'});    // can't compare objects with toBe
      expect({
@@ -57,4 +57,38 @@ it ('should expect some values', () =>
       // age: 22
    })
      ;    // toEqual instead of toBe
+});
+
+// should verify that first and last names are setName
+// should include first name and last name with proper values, given object data
+// should also verify that type is an object
+
+it ('should have the correct first and last names', () =>
+{
+  // Arrange
+  var person = ({
+    fullName: 'Peter Jenkin',
+    age: 45,
+    location: 'Redruth'
+  });
+
+  var user = {firstName: '', lastName: ''};
+
+  // Act
+  user = utils.setName(user, person.fullName);
+
+  // Assert
+  // expect(user.firstName).toBe(person.fullName.split(' ')[0]);
+  // expect(user.lastName).toBe(person.fullName.split(' ')[1]);
+
+  // expect(user.firstName).toBe('Peter');
+  // expect(user.lastName).toBe('Jenkin');
+
+  expect(user).toInclude(
+    {
+      firstName: 'Peter',
+      lastName: 'Jenkin'
+    }
+  ).toBeA('object');
+
 });
