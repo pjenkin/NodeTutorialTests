@@ -18,6 +18,14 @@ module.exports.asyncAdd = (a,b,callback) => {
 module.exports.square = (a) => a * a;
 // module.exports.square = (a) => a * a + 1;
 
+module.exports.asyncSquare = (a, callback) =>
+{
+  setTimeout(() =>
+  {
+      callback(a * a);  // inline callback as simple practice only
+  },1000);
+};
+
 module.exports.setName = (user, fullName) =>
 {
   // assuming name[space]lastname

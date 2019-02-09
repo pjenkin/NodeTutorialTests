@@ -38,6 +38,18 @@ it('should square a number', () =>
     // }
 });
 
+
+it ('should async\'ly square a number', (done) =>
+{
+  // NB no simple assignation to result variable in async with callback
+  utils.asyncSquare(4, (square) =>
+  {
+    // expect(square).toBe(17).toBeA('number');
+    expect(square).toBe(16).toBeA('number');
+    done();   // done to allow mocha to proceed - what's going on here??
+  });
+});
+
 it ('should expect some values', () =>
 {
     // expect({name: 'Peter'}).toBe({name: 'Peter'});    // can't compare objects with toBe
