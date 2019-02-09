@@ -16,6 +16,16 @@ it('should add two numbers', () =>
 });
 
 
+it ('should async\'ly\ add two numbers', (done) =>    // NB wait for done callback for mocha asynchronous
+{
+    utils.asyncAdd(4, 4, (sum) =>
+  {
+    expect(sum).toBe(8).toBeA('number');
+    done();   // call done after assertion (for asynchronous) - mocha can now go ahead
+  });
+}
+);
+
 it('should square a number', () =>
 {
     var result = utils.square(4);
