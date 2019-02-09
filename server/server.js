@@ -8,7 +8,8 @@ app.get('/', (request, response) =>
   // response.status(404).send('hello mum!');
   response.status(404).send(
   {
-    errorMessage: 'Page ain\'t found.'
+    errorMessage: 'Page ain\'t found.',
+    name: 'PNJ tutorial app 1.0'
   });
 });
 
