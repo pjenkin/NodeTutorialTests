@@ -6,8 +6,14 @@ it ('should return hello mum! response', (done) =>
 {
   request(app)
     .get('/')   // testing root url
-    .expect(200)      // status code 200 'OK' expected
-    .expect('hello mum!')
+    // .expect(200)      // status code 200 'OK' expected
+    .expect(404)      // status code 200 'OK' expected
+    // .expect('hello mum!')
     // .expect('helloooooo mum!')
+    .expect(
+      {
+        errorMessage: 'Page ain\'t found.'
+      }
+    )
     .end(done);     // done handled by supertest - wrapping up
 });
