@@ -6,6 +6,8 @@ it ('should return hello mum! response', (done) =>
 {
   request(app)
     .get('/')   // testing root url
+    .expect(200)      // status code 200 'OK' expected
     .expect('hello mum!')
+    // .expect('helloooooo mum!')
     .end(done);     // done handled by supertest - wrapping up
 });

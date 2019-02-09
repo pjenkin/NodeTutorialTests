@@ -4,7 +4,8 @@ var app = express();
 
 app.get('/', (request, response) =>
 {
-  response.send('hello mum!')
+   response.send('hello mum!');
+  // response.status(404).send('hello mum!');
 });
 
 app.listen(3000);
