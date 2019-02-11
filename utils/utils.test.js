@@ -4,30 +4,34 @@ const utils = require('./utils');
 describe('Utils', () =>
 {
 
-  it('should add two numbers', () =>
+  describe('#add', () =>
   {
-      var result = utils.add(44 , 12);
-      // throw new Error('Value not correct');
-
-      expect(result).toBe(56);    // using expect assertion library
-      expect(result).toBeA('number');
-
-      // if (result !== 56)
-      // {
-      //   throw new Error(`Expected 56 but got ${result}`);
-      // }
-  });
-
-
-  it ('should async\'ly\ add two numbers', (done) =>    // NB wait for done callback for mocha asynchronous
-  {
-      utils.asyncAdd(4, 4, (sum) =>
+    it('should add two numbers', () =>
     {
-      expect(sum).toBe(8).toBeA('number');
-      done();   // call done after assertion (for asynchronous) - mocha can now go ahead
+        var result = utils.add(44 , 12);
+        // throw new Error('Value not correct');
+
+        expect(result).toBe(56);    // using expect assertion library
+        expect(result).toBeA('number');
+
+        // if (result !== 56)
+        // {
+        //   throw new Error(`Expected 56 but got ${result}`);
+        // }
     });
-  }
-  );
+
+
+    it ('should async\'ly\ add two numbers', (done) =>    // NB wait for done callback for mocha asynchronous
+    {
+        utils.asyncAdd(4, 4, (sum) =>
+      {
+        expect(sum).toBe(8).toBeA('number');
+        done();   // call done after assertion (for asynchronous) - mocha can now go ahead
+      });
+    }
+    );
+
+  });   // end of '#add' describe block
 
   it('should square a number', () =>
   {
